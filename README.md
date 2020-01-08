@@ -23,6 +23,7 @@ pipelines:
             # compress/minify static resources (CSS and JS)
             - yuicompressor public/css/custom.css > public/css/custom.min.css
             - yuicompressor public/js/custom.js > public/js/custom.min.js
+            # don't transfer non-minify files
             - find public/css/* ! -name '*min*' -delete
             - find public/js/* ! -name '*min*' -delete
             # display tree of files that will be transfered to shared hosting (only for informational purpose)
